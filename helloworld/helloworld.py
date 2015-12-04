@@ -113,6 +113,7 @@ class  MainPageJquery(webapp2.RequestHandler):
 			                  $(this).hide();
 					 $ ('#src').hide();
 					 $('#model').hide();
+					 $('#generate').hide();
 					 var paragraph =  $('#instruct');
 					 paragraph.hide();
 
