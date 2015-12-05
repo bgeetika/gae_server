@@ -45,7 +45,7 @@ class  MainPageJquery(webapp2.RequestHandler):
                     <form id = "generate" action ="/generate" method="get">
 		    <input type ="submit" id = "sub" value="Generate and Decode any CAPTCHA"></input>
                     
-		    
+		    <br><br><br>
 		    <H1 id = "or">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OR</h1>
 		    </form>
 
