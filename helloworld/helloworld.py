@@ -25,26 +25,35 @@ class  MainPageJquery(webapp2.RequestHandler):
 		    <h3 align="center">
 		    Project Advisor: Dr. Chris Pollett
 		    <br><br>
-                    </h3>
+
+                   </h3>
+		   <div style="float:right;position:relative;top:-150px" ><img src="https://goo.gl/qfCbNM"></div>
                     <div id="footer">
-		    <ul>
+		    <ul>       
+		                <p style="position: fixed; bottom: 20; width:100%; text-align: center">
+                                For further enqtires please email@geetikagarg07@gmail.com</p>
 				<p style="position: fixed; bottom: 0; width:100%; text-align: center">
 				<a href="https://github.com/bgeetika/Captcha-Decoder">Project Github Link
 				</a>
+
 				</p>
 	            </ul></div>
 		    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
                     </head>
-                    <body>
+		    <body style="background-color:#E5A823">
 
                     <form id = "generate" action ="/generate" method="get">
 		    <input type ="submit" id = "sub" value="Generate and Decode any CAPTCHA"></input>
-                    
+                    <H1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OR</h1>
 		    </form>
-                    <img id="res_image"/> 
-                    <div id = "result_image"></div>
 
-                    <script>
+                    <img id="res_image"/><br>
+                    <div id = "actual_input"></div>
+		    <br>
+                    <div id = "result_image"></div>
+		    
+		    
+		    <script>
                     // Return decoded captcha with image
                     $( "#generate" ).submit(function( event ) {
                        console.log("generate");                    
@@ -58,10 +67,9 @@ class  MainPageJquery(webapp2.RequestHandler):
                         posting.done(function( data ) {
                           console.log(data);
                           var content = data["file_content"];
-                          console.log(typeof(content));
-                          var res = $( data ).find( "#answer" );
                           document.getElementById("res_image").src  = 'data:image/jpeg;base64,' + content;
-                          $( "#result_image" ).empty().append("The CAPTCHA decodes to : " + data['answer'] );
+                          $( "#result_image" ).empty().append("Predicted CAPTCHA: " + data['answer']);
+                          $( "#actual_input" ).empty().append("Actual CAPTCHA : " + data['actual_input'] );
                           $('#submit').hide();
                           $ ('#src').hide();
                           $('#model').hide();
