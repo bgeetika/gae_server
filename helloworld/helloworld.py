@@ -44,7 +44,9 @@ class  MainPageJquery(webapp2.RequestHandler):
 
                     <form id = "generate" action ="/generate" method="get">
 		    <input type ="submit" id = "sub" value="Generate and Decode any CAPTCHA"></input>
-                    <H1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OR</h1>
+                    
+		    
+		    <H1 id = "or">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OR</h1>
 		    </form>
 
                     <img id="res_image"/><br>
@@ -73,6 +75,7 @@ class  MainPageJquery(webapp2.RequestHandler):
                           $('#submit').hide();
                           $ ('#src').hide();
                           $('#model').hide();
+                          $('#or').hide();
                           var paragraph =  $('#instruct');
                           paragraph.hide();                      
                       });
